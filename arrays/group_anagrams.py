@@ -1,4 +1,6 @@
-"""You have been given an array of strings, where each string may contain only lowercase English letters. You need to write a function group_anagrams(strings) that groups the anagrams in the array together using a hash table (dictionary). The function should return a list of lists, where each inner list contains a group of anagrams."""
+"""You have been given an array of strings, where each string
+may contain only lowercase English letters. You need to write a function
+group_anagrams(strings) that groups the anagrams in the array together using a hash table (dictionary). The function should return a list of lists, where each inner list contains a group of anagrams."""
 
 
 def group_anagrams(strings):
