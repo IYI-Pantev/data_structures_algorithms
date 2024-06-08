@@ -27,7 +27,7 @@ class LinkedList:
         while fast is not None and fast.next is not None:
             slow = slow.next
             fast = fast.next.next
-            if slow == fast or fast == slow:
+            if slow == fast:
                 return True
         return False
     
