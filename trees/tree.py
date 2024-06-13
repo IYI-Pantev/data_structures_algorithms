@@ -46,7 +46,7 @@ class BinarySearchTree:
     def min_value(self, current_node):
         while current_node.left is not None:
             current_node = current_node.left
-        return current_node
+        return current_node.value
     
     def __r_contains(self, current_node, value):
         if current_node == None:
@@ -99,6 +99,7 @@ class BinarySearchTree:
         
     def delete_node(self, value):
         self.root = self.__delete_node(self.root, value)
+        
 my_binary_search_tree = BinarySearchTree()
 my_binary_search_tree.insert(10)
 my_binary_search_tree.insert(5)
