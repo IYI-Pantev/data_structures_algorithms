@@ -27,45 +27,22 @@ class LinkedList:
             self.tail = new_node
         self.length += 1
 
-    def _swap(self, node1, node2):
-        if node1 == self.head:
-            prev = None
-        else:
-            prev = self.head
-            while prev.next != node1:
-                prev = prev.next
-
-        ptr1 = node1
-        ptr2 = node2
-        if prev != None:
-            ptr1.next = ptr2.next
-            ptr2.next = ptr1
-            prev.next = ptr2
-        else:
-            ptr1.next = ptr2.next
-            ptr2.next = ptr1
-            self.head = ptr2
-
-    #changing with swapping the nodes
-    def bubble_sort(self):
-        if self.head == None:
-            return None
-        else:
-            current = self.head
-            for i in range(self.length - 1, 0, -1):
-                current = self.head
-                for _ in range(i):
-                    if current.value > current.next.value:
-                        self._swap(current, current.next)
-                        continue
-                    current = current.next
-
-            temp = self.head
-            while temp.next:
-                temp = temp.next
-            self.tail = temp
-
+    def selection_sort(self):
+        if self.length < 2:
             return
+        current = self.head
+        while current.next is not None:
+            smallest = current
+            inner_current = current.next
+            while inner_current is not None:
+                if inner_current.value < smallest.value:
+                    smallest = inner_current
+                inner_current = inner_current.next
+            if smallest != current:
+                current.value, smallest.value = smallest.value, current.value        
+            current = current.next
+
+
 
 my_linked_list = LinkedList(4)
 my_linked_list.append(2)
@@ -77,11 +54,10 @@ my_linked_list.append(3)
 print("Linked List Before Sort:")
 my_linked_list.print_list()
 
-my_linked_list.bubble_sort()
-print('-------')
+my_linked_list.selection_sort()
+
 print("\nSorted Linked List:")
 my_linked_list.print_list()
-# print(my_linked_list.tail.value)
 
 
 
@@ -105,4 +81,3 @@ my_linked_list.print_list()
     6
 
 """
-
