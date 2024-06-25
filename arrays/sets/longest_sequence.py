@@ -1,7 +1,7 @@
 def longest_consecutive_sequence(nums):
     filt = set()
     numbers = sorted(nums)
-    for i in range(len(numbers)):
+    for i in range(1, len(numbers)):
         prev = numbers[i - 1]
         if numbers[i] == prev + 1:
             filt.add(prev)
