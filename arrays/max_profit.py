@@ -1,36 +1,44 @@
 def max_profit(prices):
-    max_price = 1
-    min_price = 0
-    profit = 0
+    # max_price = 1
+    # min_price = 0
+    # profit = 0
     
-    for i in range(1, len(prices)-1): 
-        if prices[i] < prices[min_price] :
-            min_price = i
+    # for i in range(1, len(prices)-1): 
+    #     if prices[i] < prices[min_price] :
+    #         min_price = i
         
-    if min_price == len(prices) - 2:
-        max_price = len(prices) - 1
-        profit = prices[max_price] - prices[min_price]
-        if profit >= 0:
-            return profit
-        else:
-            return 0
+    # if min_price == len(prices) - 2:
+    #     max_price = len(prices) - 1
+    #     profit = prices[max_price] - prices[min_price]
+    #     if profit >= 0:
+    #         return profit
+    #     else:
+    #         return 0
 
-    max_price = min_price 
+    # max_price = min_price 
 
-    for j in range(min_price, len(prices)):
-        if prices[j] > prices[max_price]:
-            max_price = j
+    # for j in range(min_price, len(prices)):
+    #     if prices[j] > prices[max_price]:
+    #         max_price = j
     
-    profit = prices[max_price] - prices[min_price]
-    if profit >= 0:
-        return profit
-    else:
-        return 0
+    # profit = prices[max_price] - prices[min_price]
+    # if profit >= 0:
+    #     return profit
+    # else:
+    #     return 0
         
     # maximum_profit = prices[max_price] - prices[min_price]
     # return maximum_profit
     
-    
+# second way
+        res = 0
+        
+        lowest = prices[0]
+        for price in prices:
+            if price < lowest:
+                lowest = price
+            res = max(res, price - lowest)
+        return res
 
 
 prices = [7, 1, 5, 3, 6, 4]
