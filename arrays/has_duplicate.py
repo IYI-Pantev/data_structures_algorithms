@@ -9,6 +9,7 @@ class Solution:
             if my_dict[num] > 1:
                 return True
         return False
+    
 sol = Solution()
 nums=[1,2,3,3]
 print(sol.hasDuplicate(nums))
