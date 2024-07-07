@@ -7,7 +7,7 @@ def find_max_min(data_list):
             max_num_index = i
         if data_list[i] < data_list[min_num_index]:
             min_num_index = i
-    return (data_list[max_num_index], data_list[min_num_index])
+    return (f"Max number: {data_list[max_num_index]}\nMinimum number: {data_list[min_num_index]}")
             
 
 

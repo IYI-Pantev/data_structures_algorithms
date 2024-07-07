@@ -5,5 +5,3 @@ class Solution:
         return False
 sol = Solution()
 print(sol.isAnagram("racecar", "carrace"))
-
-print(sorted("hello"))
