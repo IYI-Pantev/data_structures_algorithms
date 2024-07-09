@@ -70,7 +70,7 @@ try:
     print("Test case 1 passed, returned: ", result)
 except AssertionError:
     print("Test case 1 failed, returned: ", result)
-
+    
 # Test case 2: Binary number 1000 = Decimal number 8
 linked_list = LinkedList(1)
 linked_list.append(0)
